@@ -6,7 +6,7 @@ import 'dotenv/config'
 
 const web3 = new Web3();
 
-const port = 3000;
+const port = 80;
 
 const ALCHEMY_KEY = process.env.ALCHEMY_KEY;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
