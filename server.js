@@ -56,7 +56,7 @@ app.get("/", (req, res) => {
 app.get("/sig", async (req, res) => {
   try {
     const { address } = req.body;
-    console.log(PaymentRequest)
+    console.log(req)
     console.log(address);
     console.log(req.body)
     console.log(JSON.stringify(req.body))
