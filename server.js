@@ -23,6 +23,8 @@ const alchemy = new Alchemy(settings);
 app.use(express.json());
 
 async function generateSig(address) {
+
+  console.log(address);
   const hasThePolacy = await alchemy.nft.verifyNftOwnership(address, thePolacy);
   const hasMilady = await alchemy.nft.verifyNftOwnership(address, milady);
 
@@ -53,9 +55,14 @@ app.get("/", (req, res) => {
 app.get("/sig", async (req, res) => {
   try {
     const { address } = req.body;
+    console.log(address);
+    console.log(req.body)
+    console.log(JSON.stringify(req.body))
     const sig = await generateSig(address);
+    console.log(sig);
     res.send({ sig });
   } catch (error) {
+    console.log(error)
     res.status(500).send({ error: "something went wrong xD" });
   }
 });
