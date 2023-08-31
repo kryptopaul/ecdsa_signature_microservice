@@ -1,8 +1,10 @@
 import Web3 from "web3";
 import express from "express";
-const app = express();
 import { Network, Alchemy } from "alchemy-sdk";
 import "dotenv/config";
+
+const app = express();
+app.use(express.json());
 
 const web3 = new Web3();
 
@@ -20,7 +22,6 @@ const settings = {
 };
 const alchemy = new Alchemy(settings);
 
-app.use(express.json());
 
 async function generateSig(address) {
 
@@ -55,6 +56,7 @@ app.get("/", (req, res) => {
 app.get("/sig", async (req, res) => {
   try {
     const { address } = req.body;
+    console.log(PaymentRequest)
     console.log(address);
     console.log(req.body)
     console.log(JSON.stringify(req.body))
