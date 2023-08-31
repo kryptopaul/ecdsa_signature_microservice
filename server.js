@@ -2,9 +2,11 @@ import Web3 from "web3";
 import express from "express";
 import { Network, Alchemy } from "alchemy-sdk";
 import "dotenv/config";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const web3 = new Web3();
 
