@@ -1,4 +1,4 @@
-# NFT Signature Microservice
+# ECDSA Signature Microservice
 
 This microservice checks if a received address mets predefined conditions, and if so, signs it with the PRIVATE_KEY environment variable.
 
